@@ -63,6 +63,8 @@ captures/
 
 # IntelliJ
 *.iml
+*.idea/
+.idea/
 .idea/gradle.xml
 .idea/assetWizardSettings.xml
 .idea/dictionaries
