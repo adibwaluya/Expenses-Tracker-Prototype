@@ -12,4 +12,7 @@
     <dimen name="logo_width">128dp</dimen>
     <dimen name="logo_height">128dp</dimen>
     <dimen name="margin_sixteen">16dp</dimen>
+    <dimen name="margin_big">250dp</dimen>
+    <dimen name="saldo_text_size">32sp</dimen>
+    <dimen name="margin_sixtyfour">64dp</dimen>
 </resources>
