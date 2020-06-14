@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ExpenseTracker</string>
+    <string name="app_name">Expenses Tracker</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot Password</string>
@@ -7,4 +7,5 @@
     <string name="signup_text">Sign up</string>
     <string name="button_income">Income</string>
     <string name="button_expense">Expense</string>
+    <string name="edit_dec_income">Income Value</string>
 </resources>
