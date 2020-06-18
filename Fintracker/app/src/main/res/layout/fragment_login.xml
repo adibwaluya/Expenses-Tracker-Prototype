@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_twenty"
+                android:layout_marginEnd="@dimen/size_twenty"
+                android:orientation="vertical"
+                android:padding="@dimen/size_eight"
+                tools:layout_marginTop="@dimen/size_ten">
+
+                <ImageView
+                    android:layout_width="@dimen/size_twohundred"
+                    android:layout_height="@dimen/size_twohundred"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/book" />
+
+                <EditText
+                    android:id="@+id/user_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_twenty"
+                    android:layout_marginEnd="@dimen/size_twenty"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="@dimen/size_twenty"
+                    android:hint="@string/username"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/size_eight"/>
+
+                <EditText
+                    android:id="@+id/user_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_twenty"
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:layout_marginEnd="@dimen/size_twenty"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="@dimen/size_twenty"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_twenty"
+                    android:layout_marginEnd="@dimen/size_twenty"
+                    android:layout_gravity="end"
+                    android:padding="@dimen/size_eight"
+                    android:text="@string/forget_password" />
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:background="@drawable/button_background"
+                    android:text="@string/log_in"
+                    android:textSize="@dimen/text_twentyone"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/signup_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:background="@drawable/button_background"
+                    android:text="@string/sign_up"
+                    android:textSize="@dimen/text_twentyone"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+        </ScrollView>
+</layout>
