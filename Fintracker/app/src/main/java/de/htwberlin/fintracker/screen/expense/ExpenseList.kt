@@ -1,4 +1,4 @@
-package de.htwberlin.fintracker.screen.income
+package de.htwberlin.fintracker.screen.expense
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,21 +8,21 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import de.htwberlin.fintracker.R
-import de.htwberlin.fintracker.databinding.FragmentIncomeListBinding
+import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class IncomeList : Fragment() {
+class ExpenseList : Fragment() {
 
-    private lateinit var binding: FragmentIncomeListBinding
+    private lateinit var binding: FragmentExpenseListBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_income_list,
+            R.layout.fragment_expense_list,
             container,
             false
         )

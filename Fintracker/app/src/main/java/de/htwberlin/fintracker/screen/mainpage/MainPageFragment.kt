@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.databinding.FragmentMainPageBinding
 
@@ -26,6 +27,14 @@ class MainPageFragment : Fragment() {
             container,
             false
         )
+
+        binding.incomeButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_mainPageFragment_to_incomeList)
+        }
+
+        binding.expenseButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_mainPageFragment_to_expenseList)
+        }
 
         return binding.root
     }

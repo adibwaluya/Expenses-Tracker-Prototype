@@ -12,11 +12,31 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_userLoginFragment_to_mainPageFragment"
-            app:destination="@id/mainPageFragment" />
+            app:destination="@id/mainPageFragment"
+            app:enterAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
         android:name="de.htwberlin.fintracker.screen.mainpage.MainPageFragment"
         android:label="MainPageFragment"
-        tools:layout="@layout/fragment_main_page"/>
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/action_mainPageFragment_to_incomeList"
+            app:destination="@id/incomeList"
+            app:enterAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_expenseList"
+            app:destination="@id/expenseList"
+            app:enterAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/incomeList"
+        android:name="de.htwberlin.fintracker.screen.income.IncomeList"
+        android:label="IncomeList"
+        tools:layout="@layout/fragment_income_list"/>
+    <fragment
+        android:id="@+id/expenseList"
+        android:name="de.htwberlin.fintracker.screen.expense.ExpenseList"
+        android:label="ExpenseList"
+        tools:layout="@layout/fragment_expense_list"/>
 </navigation>
