@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
 
@@ -30,7 +32,7 @@ class ExpenseList : Fragment() {
         )
 
         // TODO: Initialise ViewModel with ViewModelProvider
-
+        viewModel = ViewModelProviders.of(this).get(ExpenseListViewModel::class.java)
 
         // TODO: call methods to show expenses database
 
