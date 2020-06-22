@@ -14,8 +14,10 @@ import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
  * A simple [Fragment] subclass.
  */
 class ExpenseList : Fragment() {
-
+    // Create binding and viewmodel variables
     private lateinit var binding: FragmentExpenseListBinding
+    private lateinit var viewModel: ExpenseListViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
