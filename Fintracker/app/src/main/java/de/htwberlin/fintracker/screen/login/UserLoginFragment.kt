@@ -32,6 +32,10 @@ class UserLoginFragment : Fragment() {
             view.findNavController().navigate(R.id.action_userLoginFragment_to_mainPageFragment)
         }
 
+        binding.signupButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_userLoginFragment_to_userRegistrationFragment)
+        }
+
         return binding.root
     }
 

@@ -17,4 +17,8 @@
     <string name="weekly_payment">Weekly</string>
     <string name="monthly_payment">Monthly</string>
     <string name="size_forty">40dp</string>
+    <string name="email">E-mail</string>
+    <string name="register">Register</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="your_register">Register your account!</string>
 </resources>

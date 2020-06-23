@@ -17,4 +17,5 @@
     <dimen name="size_fortyfive">45dp</dimen>
     <dimen name="size_twotwenty">220dp</dimen>
     <dimen name="size_twoten">210dp</dimen>
+    <dimen name="size_onefifty">150dp</dimen>
 </resources>

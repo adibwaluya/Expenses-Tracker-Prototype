@@ -14,6 +14,10 @@
             android:id="@+id/action_userLoginFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment"
             app:enterAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_userLoginFragment_to_userRegistrationFragment"
+            app:destination="@id/userRegistrationFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
@@ -39,4 +43,14 @@
         android:name="de.htwberlin.fintracker.screen.expense.ExpenseList"
         android:label="ExpenseList"
         tools:layout="@layout/fragment_expense_list"/>
+    <fragment
+        android:id="@+id/userRegistrationFragment"
+        android:name="de.htwberlin.fintracker.screen.registration.UserRegistrationFragment"
+        android:label="UserRegistrationFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_userRegistrationFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
 </navigation>

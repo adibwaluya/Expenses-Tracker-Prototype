@@ -22,16 +22,16 @@
                     android:src="@drawable/book" />
 
                 <EditText
-                    android:id="@+id/user_username"
+                    android:id="@+id/user_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/size_twenty"
                     android:layout_marginEnd="@dimen/size_twenty"
                     android:drawableStart="@drawable/ic_person"
                     android:drawablePadding="@dimen/size_twenty"
-                    android:hint="@string/username"
+                    android:hint="@string/email"
                     android:inputType="textPersonName"
-                    android:padding="@dimen/size_eight"/>
+                    android:padding="@dimen/size_eight" />
 
                 <EditText
                     android:id="@+id/user_password"

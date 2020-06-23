@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_twenty"
+            android:layout_marginEnd="@dimen/size_twenty"
+            android:layout_marginTop="@dimen/size_ten"
+            android:orientation="vertical"
+            android:padding="@dimen/size_eight">
+
+            <TextView
+                android:id="@+id/title_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_onefifty"
+                android:fontFamily="@font/alike_angular"
+                android:text="@string/your_register"
+                android:textSize="@dimen/size_thirtytwo" />
+
+            <EditText
+                android:id="@+id/email_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginStart="@dimen/size_twenty"
+                android:layout_marginEnd="@dimen/size_twenty"
+                android:inputType="textEmailAddress"
+                android:hint="@string/email"
+                android:padding="@dimen/size_eight"
+                android:layout_marginTop="@dimen/size_sixty"/>
+
+            <EditText
+                android:id="@+id/password_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginStart="@dimen/size_twenty"
+                android:layout_marginEnd="@dimen/size_twenty"
+                android:inputType="textPassword"
+                android:padding="@dimen/size_eight"
+                android:hint="@string/password"/>
+
+            <Button
+                android:id="@+id/register_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_twenty"
+                android:layout_marginTop="@dimen/size_twenty"
+                android:layout_marginEnd="@dimen/size_twenty"
+                android:background="@drawable/button_background"
+                android:text="@string/register" />
+
+            <TextView
+                android:id="@+id/already_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_account"
+                android:layout_marginTop="@dimen/size_twenty"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
