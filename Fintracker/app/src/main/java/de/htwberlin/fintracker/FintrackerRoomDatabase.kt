@@ -9,7 +9,7 @@ import de.htwberlin.fintracker.screen.expense.ExpenseData
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
-@Database(entities = arrayOf(ExpenseData::class), version = 1)
+@Database(entities = arrayOf(ExpenseData::class), version = 1, exportSchema = false)
 public abstract class FintrackerRoomDatabase : RoomDatabase() {
 
     // Abstract getter method for each @Dao
@@ -20,12 +20,13 @@ public abstract class FintrackerRoomDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: FintrackerRoomDatabase? = null
 
+        @InternalCoroutinesApi  // to prevent error when calling synchronized(this)
         fun getDatabase(context: Context): FintrackerRoomDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {  // Check whether there already is a database
                 return tempInstance
             }
-            else {  // TODO: Change to synchronized(this)?
+            synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     FintrackerRoomDatabase::class.java,
