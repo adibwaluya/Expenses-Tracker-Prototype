@@ -32,7 +32,7 @@ class ExpenseList : Fragment() {
         )
 
         // TODO: Initialise ViewModel with ViewModelProvider
-        viewModel = ViewModelProviders.of(this).get(ExpenseListViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
 
         // TODO: call methods to show expenses database
 
