@@ -21,13 +21,14 @@ class ExpenseListViewModel(application: Application) : AndroidViewModel(applicat
     // Add logs to track when VM is initialised and destroyed
     init {
         Log.i("ExpenseListViewModel", "ExpenseListVM created!")
-        // TODO: create reference to ExpenseListDao through FinTrackerDatabase
+
+        // create reference to ExpenseListDao through FinTrackerDatabase
         val expenseListDao = FintrackerRoomDatabase.getDatabase(application).expenseListDao()
 
-        // TODO: do we need repository?
+        // initialise repository
         repository = ExpenseListRepository(expenseListDao)
 
-        // TODO: create a list of Expenses using LiveData
+        // create a list of Expenses using LiveData
         allExpenses = repository.allExpenses
     }
 
