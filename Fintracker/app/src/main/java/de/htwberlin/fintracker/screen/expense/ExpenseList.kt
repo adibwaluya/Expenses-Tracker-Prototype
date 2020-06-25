@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
 
