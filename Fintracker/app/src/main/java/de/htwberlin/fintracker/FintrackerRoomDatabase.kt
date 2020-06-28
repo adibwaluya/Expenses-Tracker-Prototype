@@ -13,7 +13,7 @@ import kotlinx.coroutines.internal.synchronized
 public abstract class FintrackerRoomDatabase : RoomDatabase() {
 
     // Abstract getter method for each @Dao
-    abstract fun expenseListDao(): ExpenseListDao
+    abstract val expenseListDao: ExpenseListDao
 
     // Singleton
     companion object {
@@ -22,16 +22,18 @@ public abstract class FintrackerRoomDatabase : RoomDatabase() {
 
         @InternalCoroutinesApi  // to prevent error when calling synchronized(this)
         fun getDatabase(context: Context): FintrackerRoomDatabase {
-            val tempInstance = INSTANCE
-            if (tempInstance != null) {  // Check whether there already is a database
-                return tempInstance
-            }
             synchronized(this) {
+                val tempInstance = INSTANCE
+                if (tempInstance != null) {  // Check whether there already is a database
+                    return tempInstance
+                }
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     FintrackerRoomDatabase::class.java,
                     "Finance_Tracker_Database"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 return instance
             }

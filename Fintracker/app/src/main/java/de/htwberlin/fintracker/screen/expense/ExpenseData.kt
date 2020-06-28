@@ -7,10 +7,14 @@ import java.util.*
 
 @Entity(tableName = "ListOfExpenses")
 data class ExpenseData (
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    // ExpId as Primary Key
+    @PrimaryKey(autoGenerate = true)
+    var ExpId: Int = 0,
     // Optional ColumnInfo
-    @ColumnInfo(name = "Expenses")
-    val info: String,
-    val date: Date,
-    val value: Double
+    @ColumnInfo(name = "ExpenseInfo")
+    var expInfo: String = "",
+    @ColumnInfo(name = "ExpenseDate")
+    var expDate: Date,
+    @ColumnInfo(name = "ExpenseValue")
+    var expValue: Double = 0.0
 )

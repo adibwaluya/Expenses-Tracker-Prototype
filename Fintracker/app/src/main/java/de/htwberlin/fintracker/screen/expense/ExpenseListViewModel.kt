@@ -23,7 +23,7 @@ class ExpenseListViewModel(application: Application) : AndroidViewModel(applicat
         Log.i("ExpenseListViewModel", "ExpenseListVM created!")
 
         // create reference to ExpenseListDao through FinTrackerDatabase
-        val expenseListDao = FintrackerRoomDatabase.getDatabase(application).expenseListDao()
+        val expenseListDao = FintrackerRoomDatabase.getDatabase(application).expenseListDao
 
         // initialise repository
         repository = ExpenseListRepository(expenseListDao)
