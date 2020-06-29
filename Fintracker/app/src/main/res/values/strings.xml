@@ -21,4 +21,5 @@
     <string name="register">Register</string>
     <string name="already_have_account">Already have an account?</string>
     <string name="your_register">Register your account!</string>
+    <string name="add_expense">+</string>
 </resources>

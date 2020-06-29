@@ -18,4 +18,5 @@
     <dimen name="size_twotwenty">220dp</dimen>
     <dimen name="size_twoten">210dp</dimen>
     <dimen name="size_onefifty">150dp</dimen>
+    <dimen name="size_sixteen">16dp</dimen>
 </resources>
