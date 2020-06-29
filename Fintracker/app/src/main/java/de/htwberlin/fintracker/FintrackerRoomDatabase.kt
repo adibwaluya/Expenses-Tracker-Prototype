@@ -6,6 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import de.htwberlin.fintracker.screen.expense.ExpenseData
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
@@ -21,7 +22,9 @@ public abstract class FintrackerRoomDatabase : RoomDatabase() {
         private var INSTANCE: FintrackerRoomDatabase? = null
 
         @InternalCoroutinesApi  // to prevent error when calling synchronized(this)
-        fun getDatabase(context: Context): FintrackerRoomDatabase {
+        fun getDatabase(context: Context,
+                        scope: CoroutineScope
+                        ): FintrackerRoomDatabase {
             synchronized(this) {
                 val tempInstance = INSTANCE
                 if (tempInstance != null) {  // Check whether there already is a database
