@@ -16,10 +16,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import de.htwberlin.fintracker.R
+import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.data.db.entities.User
+import de.htwberlin.fintracker.data.network.MyApi
+import de.htwberlin.fintracker.data.repositories.UserRepository
 import de.htwberlin.fintracker.databinding.FragmentLoginBinding
 import de.htwberlin.fintracker.screen.auth.AuthListener
 import de.htwberlin.fintracker.screen.auth.AuthViewModel
+import de.htwberlin.fintracker.screen.auth.AuthViewModelFactory
 import de.htwberlin.fintracker.util.toast
 
 /**
@@ -47,9 +51,25 @@ class UserLoginFragment : Fragment(), AuthListener {
             view.findNavController().navigate(R.id.action_userLoginFragment_to_userRegistrationFragment)
         }
 
-        val viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
+        val api = MyApi()
+        val db = AppDatabase(requireContext())
+
+        // this will be need to instantiate AuthViewModel
+        val repository = UserRepository(api, db)
+        val factory = AuthViewModelFactory(repository)
+
+        val viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
         binding.viewmodel = viewModel
         viewModel.authListener = this
+        viewModel.getLoggedInUser().observe(viewLifecycleOwner, Observer { user ->
+            if(user != null){
+
+                // User logged in
+                view?.findNavController()?.navigate(R.id.action_userLoginFragment_to_mainPageFragment)
+
+            }
+        })
+
         return binding.root
     }
 
@@ -60,7 +80,6 @@ class UserLoginFragment : Fragment(), AuthListener {
 
     override fun onSuccess(user: User) {
         binding.progresBar.visibility = View.INVISIBLE
-        Toast.makeText(getActivity(), "${user.name} is logged in", Toast.LENGTH_SHORT).show()
 
     }
 

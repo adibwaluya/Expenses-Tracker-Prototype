@@ -6,13 +6,19 @@ import de.htwberlin.fintracker.data.repositories.UserRepository
 import de.htwberlin.fintracker.util.ApiExceptions
 import de.htwberlin.fintracker.util.Coroutines
 
-class AuthViewModel : ViewModel() {
+class AuthViewModel (
+        private val repository: UserRepository
+) : ViewModel() {
 
     // Getting the email and the password from the UI
     var email: String? = null
     var password: String? = null
 
     var authListener: AuthListener? = null
+
+    // Observe user changes in the local db
+    fun getLoggedInUser() = repository.getUser()
+
     fun onLoginButtonClick(view: View){
 
         // when login button clicked, onStarted() from AuthListener will be called
@@ -28,11 +34,14 @@ class AuthViewModel : ViewModel() {
             try{
 
                 // TODO: This will be fixed using dependency injection
-                val authResponse = UserRepository().userLogin(email!!, password!!)
+                val authResponse = repository.userLogin(email!!, password!!)
 
                 authResponse.user?.let {
                     // Authenticated
                     authListener?.onSuccess(it)
+
+                    // When the response is successful, the user will be saved to the local db
+                    repository.saveUser(it)
 
                     // so that onFailure process below will not be executed
                     return@main

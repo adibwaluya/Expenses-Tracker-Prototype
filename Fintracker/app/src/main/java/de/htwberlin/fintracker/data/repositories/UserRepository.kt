@@ -2,6 +2,8 @@ package de.htwberlin.fintracker.data.repositories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import de.htwberlin.fintracker.data.db.entities.AppDatabase
+import de.htwberlin.fintracker.data.db.entities.User
 import de.htwberlin.fintracker.data.network.MyApi
 import de.htwberlin.fintracker.data.network.SafeApiRequest
 import de.htwberlin.fintracker.data.network.responses.AuthResponse
@@ -11,16 +13,27 @@ import retrofit2.Callback
 import retrofit2.Response
 
 // Required so we can communicate with the user repo from AuthViewModel
-class UserRepository: SafeApiRequest() {
+class UserRepository(
+        // constructor parameters (constructor injections)
+        private val api: MyApi,
+        private val db: AppDatabase
+): SafeApiRequest() {
 
     // Initiate the actual login
     // this function will be called in viewModel
     suspend fun userLogin(email: String, password: String) :AuthResponse{
-        //TODO: Not a good practice! soon will be fixed!
+
         // Suspend fun should be either called by suspend fun or coroutine fun!
-        return apiRequest { MyApi().userLogin(email, password) }
+        return apiRequest { api.userLogin(email, password) }
 
     }
+
+    // perform db operations and save the user asynchronously
+    suspend fun saveUser(user: User) = db.getUserDao().upsert(user)
+
+    // this function will return the user which is saved in local db
+    // this will give the LiveData which can be observed
+    fun getUser() = db.getUserDao().getUser()
 }
 
 /**
