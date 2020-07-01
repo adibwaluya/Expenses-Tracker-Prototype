@@ -18,9 +18,9 @@ class ExpenseList : Fragment() {
     // Create binding and viewmodel variables
     private lateinit var binding: FragmentExpenseListBinding
     @InternalCoroutinesApi
-    private lateinit var viewModel: ExpenseListViewModel
+    // private lateinit var viewModel: ExpenseListViewModel
 
-    @InternalCoroutinesApi
+    // @InternalCoroutinesApi
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -33,12 +33,12 @@ class ExpenseList : Fragment() {
         )
 
         // Initialise ViewModel with ViewModelProvider
-        viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
-        binding.expenseListViewModel = viewModel
+        /* viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
+        binding.expenseListViewModel = viewModel */
 
         // TODO: call methods to show expenses database
 
-        binding.setLifecycleOwner(this)
+        // binding.setLifecycleOwner(this)
         return binding.root
     }
 

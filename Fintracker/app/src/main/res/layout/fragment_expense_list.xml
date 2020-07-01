@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Data to make available to the XML via data binding -->
+    <!-- Data to make available to the XML via data binding
     <data>
         <variable
             name="ExpenseListViewModel"
             type="de.htwberlin.fintracker.screen.expense.ExpenseListViewModel" />
-    </data>
+    </data> -->
 
     <LinearLayout
         android:layout_width="match_parent"
