@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import de.htwberlin.fintracker.R
+import de.htwberlin.fintracker.data.db.entities.User
 import de.htwberlin.fintracker.databinding.FragmentLoginBinding
 import de.htwberlin.fintracker.screen.auth.AuthListener
 import de.htwberlin.fintracker.screen.auth.AuthViewModel
@@ -57,11 +58,9 @@ class UserLoginFragment : Fragment(), AuthListener {
 
     }
 
-    override fun onSuccess(loginResponse: LiveData<String>) {
+    override fun onSuccess(user: User) {
         binding.progresBar.visibility = View.INVISIBLE
-        loginResponse.observe(this, Observer {
-            Toast.makeText(getActivity(), it, Toast.LENGTH_SHORT).show()
-        })
+        Toast.makeText(getActivity(), "${user.name} is logged in", Toast.LENGTH_SHORT).show()
 
     }
 

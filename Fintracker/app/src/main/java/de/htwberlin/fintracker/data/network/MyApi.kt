@@ -1,7 +1,9 @@
 package de.htwberlin.fintracker.data.network
 
+import de.htwberlin.fintracker.data.network.responses.AuthResponse
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -17,11 +19,18 @@ interface MyApi {
      *  that LoginActivity will only communicate with ViewModel.
      *  Email and password will be sent to the viewModel and the viewModel will interact with
      *  the repository to send the email and password to back-end server
+     *
+     *  Suspending functions are the center of everything in coroutines!
+     *  A suspending function is simply a function that can be paused and resumed at later time
+     *  This type of function can execute a long running operation and wait for it to complete
+     *  without blocking
+     *
+     *  TODO: Don't forget to apply suspend fun as well in UserRepository!
      */
-    fun userLogin(
+    suspend fun userLogin(
             @Field("email") email: String,
             @Field("password") password: String
-    ) : Call<ResponseBody>
+    ) : Response<AuthResponse>
 
     companion object{
 

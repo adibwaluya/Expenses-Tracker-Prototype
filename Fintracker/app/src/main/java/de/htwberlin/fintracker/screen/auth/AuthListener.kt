@@ -1,6 +1,7 @@
 package de.htwberlin.fintracker.screen.auth
 
 import androidx.lifecycle.LiveData
+import de.htwberlin.fintracker.data.db.entities.User
 
 // Callback from viewModel to Fragment/Activity (display error/sucess message)
 interface AuthListener {
@@ -9,7 +10,7 @@ interface AuthListener {
     fun onStarted()
 
     // Authentication successfull
-    fun onSuccess(loginResponse: LiveData<String>)
+    fun onSuccess(user: User)
 
     // When operation fails, the reason will be displayed
     fun onFailure(message: String)
