@@ -3,6 +3,7 @@ package de.htwberlin.fintracker.screen.auth
 import android.view.View
 import androidx.lifecycle.ViewModel
 import de.htwberlin.fintracker.data.repositories.UserRepository
+import de.htwberlin.fintracker.util.ApiExceptions
 import de.htwberlin.fintracker.util.Coroutines
 
 class AuthViewModel : ViewModel() {
@@ -23,18 +24,26 @@ class AuthViewModel : ViewModel() {
         }
 
         Coroutines.main {
-            // TODO: This will be fixed using dependency injection
-            // type of this response is Response of type AuthResponse
-            val response = UserRepository().userLogin(email!!, password!!)
-            if(response.isSuccessful){
-                // Authenticated
-                authListener?.onSuccess(response.body()?.user!!)
+
+            try{
+
+                // TODO: This will be fixed using dependency injection
+                val authResponse = UserRepository().userLogin(email!!, password!!)
+
+                authResponse.user?.let {
+                    // Authenticated
+                    authListener?.onSuccess(it)
+
+                    // so that onFailure process below will not be executed
+                    return@main
+                }
+                // in case the user is null
+                authListener?.onFailure(authResponse.message!!)
+            }
+            catch (e: ApiExceptions){
+                authListener?.onFailure(e.message!!)
             }
 
-            // TODO: Because of Coroutines, failure needs to be fixed!
-            else{
-                authListener?.onFailure("Error code: ${response.code()}")
-            }
         }
 
     }
