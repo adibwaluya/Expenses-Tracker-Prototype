@@ -35,7 +35,7 @@ interface MyApi {
 
     @FormUrlEncoded
     @POST("createuser")
-    suspend fun userSignUp(
+    suspend fun userSignup(
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String

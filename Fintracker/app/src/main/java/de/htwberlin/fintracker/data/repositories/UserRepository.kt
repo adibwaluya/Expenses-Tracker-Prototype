@@ -34,7 +34,7 @@ class UserRepository(
         password: String
     ) : AuthResponse{
 
-        return apiRequest { api.userSignUp(name, email, password) }
+        return apiRequest { api.userSignup(name, email, password) }
     }
 
     // perform db operations and save the user asynchronously

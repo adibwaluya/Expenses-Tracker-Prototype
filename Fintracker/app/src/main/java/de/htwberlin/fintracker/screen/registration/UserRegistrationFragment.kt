@@ -42,10 +42,6 @@ class UserRegistrationFragment : Fragment(), AuthListener {
             false
         )
 
-        binding.registerButton.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_userRegistrationFragment_to_mainPageFragment)
-        }
-
         binding.alreadyAccount.setOnClickListener { view: View ->
             this.findNavController().navigate(R.id.action_userRegistrationFragment_to_userLoginFragment)
         }
