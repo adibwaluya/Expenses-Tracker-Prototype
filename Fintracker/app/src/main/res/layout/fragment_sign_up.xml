@@ -2,6 +2,12 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <data>
+        <variable
+            name="viewmodel"
+            type="de.htwberlin.fintracker.screen.auth.AuthViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -15,6 +21,7 @@
             android:orientation="vertical"
             android:padding="@dimen/size_eight">
 
+
             <TextView
                 android:id="@+id/title_register"
                 android:layout_width="wrap_content"
@@ -26,6 +33,19 @@
                 android:textSize="@dimen/size_thirtytwo" />
 
             <EditText
+                android:text="@{viewmodel.name}"
+                android:id="@+id/name_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_twenty"
+                android:layout_marginTop="@dimen/size_ten"
+                android:layout_marginEnd="@dimen/size_twenty"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/name_hint" />
+
+            <EditText
+                android:text="@{viewmodel.email}"
                 android:id="@+id/email_registration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,9 +55,10 @@
                 android:inputType="textEmailAddress"
                 android:hint="@string/email"
                 android:padding="@dimen/size_eight"
-                android:layout_marginTop="@dimen/size_sixty"/>
+                />
 
             <EditText
+                android:text="@{viewmodel.password}"
                 android:id="@+id/password_registration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,7 +69,19 @@
                 android:padding="@dimen/size_eight"
                 android:hint="@string/password"/>
 
+            <EditText
+                android:id="@+id/password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_twenty"
+                android:layout_marginEnd="@dimen/size_twenty"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="@string/password_confirm"
+                android:text="@{viewmodel.passwordConfirm}" />
+
             <Button
+                android:onClick="@{viewmodel::onSignupButtonClick}"
                 android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,6 +98,13 @@
                 android:text="@string/already_have_account"
                 android:layout_marginTop="@dimen/size_twenty"
                 android:layout_gravity="center"/>
+
+            <ProgressBar
+                android:visibility="invisible"
+                android:id="@+id/progres_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
     </ScrollView>

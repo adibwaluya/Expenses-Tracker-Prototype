@@ -22,4 +22,6 @@
     <string name="already_have_account">Already have an account?</string>
     <string name="your_register">Register your account!</string>
     <string name="add_expense">+</string>
+    <string name="name_hint">Name</string>
+    <string name="password_confirm">Confirm Password</string>
 </resources>
