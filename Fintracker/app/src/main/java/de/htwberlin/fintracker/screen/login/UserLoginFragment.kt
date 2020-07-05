@@ -19,6 +19,7 @@ import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.data.db.entities.User
 import de.htwberlin.fintracker.data.network.MyApi
+import de.htwberlin.fintracker.data.network.NetworkConnectionInterceptor
 import de.htwberlin.fintracker.data.repositories.UserRepository
 import de.htwberlin.fintracker.databinding.FragmentLoginBinding
 import de.htwberlin.fintracker.screen.auth.AuthListener
@@ -51,7 +52,9 @@ class UserLoginFragment : Fragment(), AuthListener {
             view.findNavController().navigate(R.id.action_userLoginFragment_to_userRegistrationFragment)
         }
 
-        val api = MyApi()
+        // TODO: BAD PRACTICE! Replace with dependency injection
+        val networkConnectionInterceptor = NetworkConnectionInterceptor(context!!.applicationContext)
+        val api = MyApi(networkConnectionInterceptor)
         val db = AppDatabase(requireContext())
 
         // this will be need to instantiate AuthViewModel

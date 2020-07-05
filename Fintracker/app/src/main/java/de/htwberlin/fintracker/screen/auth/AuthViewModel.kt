@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import de.htwberlin.fintracker.data.repositories.UserRepository
 import de.htwberlin.fintracker.util.ApiExceptions
 import de.htwberlin.fintracker.util.Coroutines
+import de.htwberlin.fintracker.util.NoInternetException
 
 class AuthViewModel (
         private val repository: UserRepository
@@ -50,6 +51,9 @@ class AuthViewModel (
                 authListener?.onFailure(authResponse.message!!)
             }
             catch (e: ApiExceptions){
+                authListener?.onFailure(e.message!!)
+            }
+            catch (e: NoInternetException){
                 authListener?.onFailure(e.message!!)
             }
 

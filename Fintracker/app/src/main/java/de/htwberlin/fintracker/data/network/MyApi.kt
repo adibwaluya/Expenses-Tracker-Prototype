@@ -1,6 +1,7 @@
 package de.htwberlin.fintracker.data.network
 
 import de.htwberlin.fintracker.data.network.responses.AuthResponse
+import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -34,12 +35,21 @@ interface MyApi {
 
     companion object{
 
-        operator fun invoke(): MyApi {
+        operator fun invoke(
+            // Network connection interceptor as context
+            networkConnectionInterceptor: NetworkConnectionInterceptor
+        ): MyApi {
+
+            val okkHttpClient = OkHttpClient.Builder()
+                .addInterceptor(networkConnectionInterceptor)
+                .build()
+
             return Retrofit.Builder()
-                    .baseUrl("http://192.168.43.251/MyApi/public/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                    .create(MyApi::class.java)
+                .client(okkHttpClient)
+                .baseUrl("http://192.168.43.251/MyApi/public/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(MyApi::class.java)
         }
     }
 }
