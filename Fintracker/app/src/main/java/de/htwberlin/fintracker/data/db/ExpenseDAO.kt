@@ -13,6 +13,10 @@ interface ExpenseDAO {
     @Query("SELECT * FROM `List of Expenses` ORDER BY expId DESC")
     fun getAllExpenses(): LiveData<List<Expense>>  // The data will be tracked with LiveData
 
+    // Show one expense at a time
+    @Query("SELECT * FROM `List of Expenses` ORDER BY expId DESC LIMIT 1")
+    fun getExpense(): Expense
+
 
     // Function to insert more expenses to the database
     @Insert

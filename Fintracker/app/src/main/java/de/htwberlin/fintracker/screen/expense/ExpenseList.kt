@@ -40,6 +40,7 @@ class ExpenseList : Fragment() {
         val dao = db.getExpenseDao()
         val factory = ExpenseListViewModelFactory(dao)
 
+
         viewModel = ViewModelProvider(this, factory).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
 
@@ -49,7 +50,7 @@ class ExpenseList : Fragment() {
 
         // TODO: call methods to show expenses database
 
-        // binding.setLifecycleOwner(this)
+        binding.setLifecycleOwner(this)
         return binding.root
     }
 
