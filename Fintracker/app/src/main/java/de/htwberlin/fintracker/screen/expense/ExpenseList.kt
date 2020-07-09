@@ -17,8 +17,8 @@ import kotlinx.coroutines.InternalCoroutinesApi
 class ExpenseList : Fragment() {
     // Create binding and viewmodel variables
     private lateinit var binding: FragmentExpenseListBinding
-    @InternalCoroutinesApi
-    // private lateinit var viewModel: ExpenseListViewModel
+    //@InternalCoroutinesApi
+    private lateinit var viewModel: ExpenseListViewModel
 
     // @InternalCoroutinesApi
     override fun onCreateView(
@@ -32,9 +32,9 @@ class ExpenseList : Fragment() {
             false
         )
 
-        // Initialise ViewModel with ViewModelProvider
-        /* viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
-        binding.expenseListViewModel = viewModel */
+        // Initialise ViewModel with ViewModelProvider and databinding
+        viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
+        binding.expenseListViewModel = viewModel
 
         // TODO: call methods to show expenses database
 
