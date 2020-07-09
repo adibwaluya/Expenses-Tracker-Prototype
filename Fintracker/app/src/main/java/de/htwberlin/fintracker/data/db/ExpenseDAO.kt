@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.OnConflictStrategy
 import de.htwberlin.fintracker.data.db.entities.Expense
 
 @Dao
@@ -15,8 +14,8 @@ interface ExpenseDAO {
     fun getAllExpenses(): LiveData<List<Expense>>  // The data will be tracked with LiveData
 
 
-    // Function to insert more expenses or update the expenses to the database
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    // Function to insert more expenses to the database
+    @Insert
     fun addExpenses(expense: Expense)
 
 
