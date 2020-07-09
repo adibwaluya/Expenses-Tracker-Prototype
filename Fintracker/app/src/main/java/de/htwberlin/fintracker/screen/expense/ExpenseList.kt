@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import de.htwberlin.fintracker.R
+import de.htwberlin.fintracker.data.db.ExpenseDAO
+import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -34,7 +36,11 @@ class ExpenseList : Fragment() {
         )
 
         // Initialise ViewModel with ViewModelProvider and databinding
-        viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
+        val db = AppDatabase(requireContext())
+        val dao = db.getExpenseDao()
+        val factory = ExpenseListViewModelFactory(dao)
+
+        viewModel = ViewModelProvider(this, factory).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
 
         binding.fabExpense.setOnClickListener { view : View ->
