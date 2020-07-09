@@ -11,5 +11,5 @@ data class Expense(var expValue: Double? = null){
     var expId: Int = EXPENSE_ID
     // Entities for ROOM Database
     var expInfo: String? = null
-    var expDate: LocalDate? = null
+    // var expDate: LocalDate? = null
 }
