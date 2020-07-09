@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -35,6 +36,10 @@ class ExpenseList : Fragment() {
         // Initialise ViewModel with ViewModelProvider and databinding
         viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
+
+        binding.fabExpense.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_mainPageFragment_to_incomeList)  // to test
+        }
 
         // TODO: call methods to show expenses database
 
