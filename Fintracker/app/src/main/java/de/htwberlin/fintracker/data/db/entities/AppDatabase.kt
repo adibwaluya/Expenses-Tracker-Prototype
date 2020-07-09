@@ -10,7 +10,8 @@ import de.htwberlin.fintracker.screen.login.UserLoginFragment
 
 @Database(
         entities = [User::class, Expense::class],
-        version = 1
+        version = 1,
+        exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase(){
 

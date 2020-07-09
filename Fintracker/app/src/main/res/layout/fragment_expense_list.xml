@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Data to make available to the XML via data binding
+    <!-- Data to make available to the XML via data binding -->
     <data>
         <variable
             name="ExpenseListViewModel"
             type="de.htwberlin.fintracker.screen.expense.ExpenseListViewModel" />
-    </data> -->
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,6 +87,14 @@
                 tools:listitem="@layout/recyclerview_expenses"
                 android:padding="@dimen/size_sixteen" />
 
+            <TextView
+                android:id="@+id/amountExpenses"
+                android:layout_width="wrap_content"
+                android:layout_height="97dp"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp"
+                android:text="Amount of Expenses" />
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fabExpense"
                 android:layout_width="wrap_content"
@@ -97,6 +105,7 @@
 
 
         </LinearLayout>
+
     </LinearLayout>
 
 </layout>
