@@ -9,7 +9,7 @@ class ExpenseRepository(
     // private val dao: ExpenseDAO
 ) {
     // perform Dao operations to insert or update expenses
-    fun addExpense(expense: Expense) = db.getExpenseDao().addExpenses(expense)
+    // fun addExpense(expense: Expense) = db.getExpenseDao().addExpenses(expense)
 
 
     // function to get all expenses

@@ -23,7 +23,7 @@ class ExpenseList : Fragment() {
     // Create binding and viewmodel variables
     private lateinit var binding: FragmentExpenseListBinding
     // @InternalCoroutinesApi
-    // private lateinit var viewModel: ExpenseListViewModel
+    private lateinit var viewModel: ExpenseListViewModel
 
     // @InternalCoroutinesApi
     override fun onCreateView(
@@ -42,12 +42,12 @@ class ExpenseList : Fragment() {
         val repo = ExpenseRepository(db)
 
         // Initialise ViewModel with ViewModelProvider
-        val viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
         viewModel.getAllExpenses().observe(viewLifecycleOwner, Observer { expenses ->
             // Update the expenses in the fragment
             if (expenses.size != 1)
-                view?.findViewById<TextView>(R.id.amountExpenses)?.text = expenses.toString()
+                binding.amountExpenses.text = expenses.toString()
         })
 
         // TODO: call methods to show expenses database
