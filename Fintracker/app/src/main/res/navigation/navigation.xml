@@ -42,7 +42,11 @@
         android:id="@+id/expenseList"
         android:name="de.htwberlin.fintracker.screen.expense.ExpenseList"
         android:label="ExpenseList"
-        tools:layout="@layout/fragment_expense_list"/>
+        tools:layout="@layout/fragment_expense_list">
+        <action
+            android:id="@+id/action_expenseList_to_incomeList"
+            app:destination="@id/incomeList" />
+    </fragment>
     <fragment
         android:id="@+id/userRegistrationFragment"
         android:name="de.htwberlin.fintracker.screen.registration.UserRegistrationFragment"

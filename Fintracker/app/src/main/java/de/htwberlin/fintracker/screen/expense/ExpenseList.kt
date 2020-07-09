@@ -38,7 +38,7 @@ class ExpenseList : Fragment() {
         binding.expenseListViewModel = viewModel
 
         binding.fabExpense.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_mainPageFragment_to_incomeList)  // to test
+            view.findNavController().navigate(R.id.action_expenseList_to_incomeList)  // to test
         }
 
         // TODO: call methods to show expenses database
