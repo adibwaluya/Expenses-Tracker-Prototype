@@ -18,4 +18,6 @@ class ExpenseListViewModel(
 
     // Observe user changes in the local db
     fun getAllExpenses() = repository.getAllExpenses()
+
+
 }
