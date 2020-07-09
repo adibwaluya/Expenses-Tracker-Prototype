@@ -15,6 +15,7 @@ class ExpenseListViewModel(
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private var expense = MutableLiveData<Expense>()
+    private var expenses = MutableLiveData<List<Expense>>()
 
     init {
         initialiseExpense()
@@ -33,6 +34,26 @@ class ExpenseListViewModel(
         }
     }
 
+    // TODO: Complete the function
+    /*
+    private fun initialiseListExpenses() {
+        uiScope.launch {
+            expenses.value = getExpensesFromDatabase()
+        }
+    }
+
+     */
+
+    // TODO: configure and complete the function
+    /*
+    private suspend fun getExpensesFromDatabase(): List<Expense>? {
+        return withContext(Dispatchers.IO) {
+            var expenses = dao.getAllExpenses()
+            expenses
+        }
+    }
+
+     */
 
     // Functions from Dao
     fun getAllExpenses() = dao.getAllExpenses()
