@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Fintracker</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="login">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="log_in">Log in</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <string name="one_time_payment">One-time payment</string>
+    <string name="daily_payment">Daily</string>
+    <string name="one_time">One-time</string>
+    <string name="weekly_payment">Weekly</string>
+    <string name="monthly_payment">Monthly</string>
+    <string name="size_forty">40dp</string>
+    <string name="email">E-mail</string>
+    <string name="register">Register</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="your_register">Register your account!</string>
+    <string name="add_expense">+</string>
+    <string name="name_hint">Name</string>
+    <string name="password_confirm">Confirm Password</string>
+</resources>
