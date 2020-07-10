@@ -2,6 +2,7 @@ package de.htwberlin.fintracker.screen.expense
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import de.htwberlin.fintracker.data.db.ExpenseDAO
 import de.htwberlin.fintracker.data.db.entities.Expense
@@ -16,6 +17,7 @@ class ExpenseListViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private var expense = MutableLiveData<Expense>()
     private var expenses = MutableLiveData<List<Expense>>()
+    private val expensesToShow = dao.getAllExpenses()
 
     init {
         initialiseExpense()
