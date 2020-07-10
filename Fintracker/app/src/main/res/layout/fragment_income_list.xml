@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="IncomeListViewModel"
+            type="de.htwberlin.fintracker.screen.income.IncomeListViewModel" />
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,6 +77,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_fiftyfive"
                 android:text="Amount of monthly payment"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                tools:listitem="@layout/recyclerview_incomes"
+                android:padding="@dimen/size_sixteen"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_sixteen"
+                android:contentDescription="@string/add_income"
+                android:src="@drawable/ic_baseline_add_24"
+                android:onClick="@{() -> IncomeListViewModel.onAddIncome() }"/>
+
 
 
         </LinearLayout>

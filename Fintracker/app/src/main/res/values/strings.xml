@@ -24,4 +24,5 @@
     <string name="add_expense">+</string>
     <string name="name_hint">Name</string>
     <string name="password_confirm">Confirm Password</string>
+    <string name="add_income">+</string>
 </resources>
