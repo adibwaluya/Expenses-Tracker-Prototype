@@ -55,6 +55,22 @@ class ExpenseListViewModel(
 
      */
 
+    // New click handler for the FAB - will be called with lambda function from XML code
+    fun onAddExpense() {
+        uiScope.launch {
+            val newExpense = Expense()
+            insert(newExpense)
+            expense.value = getExpenseFromDatabase()
+        }
+    }
+
+    // Suspend function from the click handler
+    private suspend fun insert(newExpense: Expense) {
+        withContext(Dispatchers.IO) {
+            dao.addExpenses(newExpense)
+        }
+    }
+
     // Functions from Dao
     fun getAllExpenses() = dao.getAllExpenses()
 

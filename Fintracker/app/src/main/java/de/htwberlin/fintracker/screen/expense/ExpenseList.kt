@@ -44,9 +44,11 @@ class ExpenseList : Fragment() {
         viewModel = ViewModelProvider(this, factory).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
 
+        /*
         binding.fabExpense.setOnClickListener { view : View ->
             view.findNavController().navigate(R.id.action_expenseList_to_incomeList)  // to test
         }
+         */
 
         // TODO: call methods to show expenses database
 
