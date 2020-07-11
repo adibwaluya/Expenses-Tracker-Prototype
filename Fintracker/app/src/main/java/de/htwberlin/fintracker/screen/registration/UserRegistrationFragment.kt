@@ -31,6 +31,7 @@ import de.htwberlin.fintracker.screen.auth.AuthViewModelFactory
 class UserRegistrationFragment : Fragment(), AuthListener {
 
     private lateinit var binding: FragmentSignUpBinding
+    private lateinit var viewModel: UserRegistrationViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,12 +54,12 @@ class UserRegistrationFragment : Fragment(), AuthListener {
 
         // this will be need to instantiate AuthViewModel
         val repository = UserRepository(api, db)
-        val factory = AuthViewModelFactory(repository)
+        val factory = UserRegistrationViewModelFactory(repository)
 
-        val viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
-        binding.viewmodel = viewModel
+        viewModel = ViewModelProvider(this, factory).get(UserRegistrationViewModel::class.java)
+        binding.signupviewmodel = viewModel
         viewModel.authListener = this
-        viewModel.getLoggedInUser().observe(viewLifecycleOwner, Observer { user ->
+        viewModel.SignedUpUser().observe(viewLifecycleOwner, Observer { user ->
             if(user != null){
 
                 // User logged in
@@ -67,6 +68,7 @@ class UserRegistrationFragment : Fragment(), AuthListener {
             }
         })
 
+        binding.setLifecycleOwner(this)
         return binding.root
         }
 
