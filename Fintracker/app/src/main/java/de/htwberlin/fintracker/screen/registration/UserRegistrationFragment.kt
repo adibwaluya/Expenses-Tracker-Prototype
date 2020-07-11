@@ -88,28 +88,5 @@ class UserRegistrationFragment : Fragment(), AuthListener {
 
 }
 
-/**
- * private fun performRegister() {
-
-val email = binding.emailRegistration.text.toString()
-val password = binding.passwordRegistration.text.toString()
-
-if (email.isEmpty() || password.isEmpty()) {
-Toast.makeText(activity, "Please fill in the empty column", Toast.LENGTH_SHORT).show()
-return
-}
-
-FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-.addOnCompleteListener {
-if(!it.isSuccessful) return@addOnCompleteListener
-
-else
-Log.d("Main", "Successfully created user with uid: ${it.result?.user?.uid}")
-}
-.addOnFailureListener {
-Toast.makeText(activity, "Failed to create user: ${it.message}", Toast.LENGTH_SHORT)
-}
-}
- * */
 
 
