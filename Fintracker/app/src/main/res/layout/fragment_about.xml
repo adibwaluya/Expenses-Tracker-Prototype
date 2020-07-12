@@ -10,7 +10,7 @@
             android:layout_width="@dimen/size_twohundred"
             android:layout_height="@dimen/size_twohundred"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/book"
+            android:src="@drawable/expensee"
             />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_marginTop="@dimen/size_sixteen"
             android:layout_marginEnd="@dimen/size_forty"
             android:fontFamily="serif"
-            android:text="@string/about_exptwo"
+            android:text="@string/exp_about"
             android:textAlignment="viewStart"
             android:textSize="@dimen/text_twentyone" />
 
