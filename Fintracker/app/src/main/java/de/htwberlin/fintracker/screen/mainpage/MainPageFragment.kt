@@ -37,11 +37,19 @@ class MainPageFragment : Fragment() {
             view.findNavController().navigate(R.id.action_mainPageFragment_to_expenseList)
         }
 
+        /**
+         * Use data binding to navigate to input data layout
+         */
+        binding.addFromMainPage.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_mainPageFragment_to_inputData)
+        }
+
         setHasOptionsMenu(true)
         drawerLayout = binding.drawerLayout
         NavigationUI.setupWithNavController(binding.navView, findNavController())
         return binding.root
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

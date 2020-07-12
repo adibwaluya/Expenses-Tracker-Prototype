@@ -31,7 +31,11 @@
         <action
             android:id="@+id/action_mainPageFragment_to_expenseList"
             app:destination="@id/expenseList"
-            app:enterAnim="@anim/slide_out_right" />
+            app:enterAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_inputData"
+            app:destination="@id/inputData"
+            app:enterAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/incomeList"
@@ -62,7 +66,8 @@
             app:enterAnim="@android:anim/slide_in_left" />
         <action
             android:id="@+id/action_userRegistrationFragment_to_mainPageFragment"
-            app:destination="@id/mainPageFragment" />
+            app:destination="@id/mainPageFragment"
+            app:enterAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/inputData"
