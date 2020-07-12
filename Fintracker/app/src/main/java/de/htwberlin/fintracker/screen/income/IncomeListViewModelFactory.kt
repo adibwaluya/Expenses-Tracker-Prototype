@@ -11,4 +11,5 @@ class IncomeListViewModelFactory(
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return IncomeListViewModel(dao) as T
     }
+
 }

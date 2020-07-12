@@ -16,6 +16,7 @@ class IncomeListViewModel(
     private var income = MutableLiveData<Income>()
     private var incomes = MutableLiveData<List<Income>>()
     private val incomeToShow = dao.getAllIncomes()
+
     // Added logs to track when VM is initialised and destroyed
     init {
         initialiseIncome()
@@ -34,10 +35,6 @@ class IncomeListViewModel(
         }
     }
 
-    // TODO: Initialise List Expenses
-
-    // TODO: Get Incomes from db
-
     fun onAddIncome(){
         uiScope.launch {
             val newIncome = Income()
@@ -45,6 +42,7 @@ class IncomeListViewModel(
             income.value = getIncomeFromDatabase()
         }
     }
+
     private suspend fun insert(newIncome: Income){
         withContext(Dispatchers.IO){
             dao.addIncome(newIncome)
@@ -57,4 +55,5 @@ class IncomeListViewModel(
         super.onCleared()
         viewModelJob.cancel()
     }
+
 }
