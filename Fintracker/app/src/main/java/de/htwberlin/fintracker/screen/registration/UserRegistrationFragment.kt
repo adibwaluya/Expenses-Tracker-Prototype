@@ -42,7 +42,6 @@ class UserRegistrationFragment : Fragment(), AuthListener {
             this.findNavController().navigate(R.id.action_userRegistrationFragment_to_userLoginFragment)
         }
 
-        // TODO: BAD PRACTICE! Replace with dependency injection
         val networkConnectionInterceptor = NetworkConnectionInterceptor(context!!.applicationContext)
         val api = MyApi(networkConnectionInterceptor)
         val db = AppDatabase(requireContext())
