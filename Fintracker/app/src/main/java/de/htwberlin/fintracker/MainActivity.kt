@@ -6,17 +6,21 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import de.htwberlin.fintracker.databinding.ActivityMainBinding
+
 // import de.htwberlin.fintracker.screen.expense.ExpenseListAdapter
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
-        // Add RecyclerView
+
+                // Add RecyclerView
         /* val recyclerView = findViewById<RecyclerView>(R.id.recyclerview_expenses)
         val adapter = ExpenseListAdapter(this)
         recyclerView.adapter = adapter

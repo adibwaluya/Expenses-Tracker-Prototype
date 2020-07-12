@@ -32,4 +32,6 @@
     <string name="about_app">About</string>
     <string name="about_explanation">Expensee is a platform which could help you to save all important income and expenses in your daily life. Easy to use, your budget tracker is also save and only accessible for you.</string>
     <string name="about_exptwo">Expensee is a platform which could help you to save all important income and expenses in your daily life.\n\nEasy to use, your budget tracker is also safe and only accessible for you.</string>
+    <string name="main_page">Main Page</string>
+    <string name="about_fr">About</string>
 </resources>

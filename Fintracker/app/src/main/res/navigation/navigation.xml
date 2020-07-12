@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/userLoginFragment"
         android:name="de.htwberlin.fintracker.screen.login.UserLoginFragment"
-        android:label="UserLoginFragment"
+        android:label="Sign in"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_userLoginFragment_to_mainPageFragment"
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/mainPageFragment"
         android:name="de.htwberlin.fintracker.screen.mainpage.MainPageFragment"
-        android:label="MainPageFragment"
+        android:label="Expensee"
         tools:layout="@layout/fragment_main_page">
         <action
             android:id="@+id/action_mainPageFragment_to_incomeList"
@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/incomeList"
         android:name="de.htwberlin.fintracker.screen.income.IncomeList"
-        android:label="IncomeList"
+        android:label="Income List"
         tools:layout="@layout/fragment_income_list">
         <action
             android:id="@+id/action_incomeList_to_inputData"
@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/expenseList"
         android:name="de.htwberlin.fintracker.screen.expense.ExpenseList"
-        android:label="ExpenseList"
+        android:label="Expense List"
         tools:layout="@layout/fragment_expense_list">
         <action
             android:id="@+id/action_expenseList_to_inputData"
@@ -54,7 +54,7 @@
     <fragment
         android:id="@+id/userRegistrationFragment"
         android:name="de.htwberlin.fintracker.screen.registration.UserRegistrationFragment"
-        android:label="UserRegistrationFragment"
+        android:label="Sign Up"
         tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_userRegistrationFragment_to_userLoginFragment"
@@ -72,6 +72,6 @@
     <fragment
         android:id="@+id/about"
         android:name="de.htwberlin.fintracker.screen.about.About"
-        android:label="About"
+        android:label="About Expensee"
         tools:layout="@layout/fragment_about"/>
 </navigation>
