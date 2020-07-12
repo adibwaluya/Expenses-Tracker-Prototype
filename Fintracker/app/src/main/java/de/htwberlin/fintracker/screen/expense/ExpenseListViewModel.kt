@@ -1,8 +1,6 @@
 package de.htwberlin.fintracker.screen.expense
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import de.htwberlin.fintracker.data.db.ExpenseDAO
 import de.htwberlin.fintracker.data.db.entities.Expense
@@ -11,7 +9,6 @@ import kotlinx.coroutines.*
 class ExpenseListViewModel(
     private val dao: ExpenseDAO
 ): ViewModel() {
-
     // Declaring variables
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -22,6 +19,8 @@ class ExpenseListViewModel(
     init {
         initialiseExpense()
     }
+
+    // Functions from Dao
 
     private fun initialiseExpense() {
         uiScope.launch {
@@ -73,7 +72,7 @@ class ExpenseListViewModel(
         }
     }
 
-    // Functions from Dao
+    // Functions to get all expenses from database
     fun getAllExpenses() = dao.getAllExpenses()
 
     // Override function

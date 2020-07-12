@@ -29,6 +29,7 @@
             android:gravity="center" />
 
         <EditText
+            android:id="@+id/value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -40,6 +41,7 @@
             android:layout_marginBottom="@dimen/margin_between_layout" />
 
         <EditText
+            android:id="@+id/message"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -52,11 +54,13 @@
 
 
         <Switch
-            android:id="@+id/switchBetweenIncomeExpense"
+            android:id="@+id/switch_income_or_expense"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:text="@string/input_type"
             android:textOff="@string/expense"
             android:textOn="@string/income"
+            android:textSize="@dimen/text_sixteen"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/size_thirtytwo"
             android:layout_marginTop="@dimen/size_thirtytwo"
@@ -65,14 +69,15 @@
 
 
         <Button
-            android:id="@+id/input_button"
+            android:id="@+id/input_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_twenty"
             android:layout_marginTop="@dimen/size_twenty"
             android:layout_marginEnd="@dimen/size_twenty"
             android:background="@drawable/button_background"
-            android:text="@string/confirm" />
+            android:text="@string/confirm"
+            android:onClick="@{() -> InputDataViewModel.onInputData()}" />
 
         <!--
         <ToggleButton

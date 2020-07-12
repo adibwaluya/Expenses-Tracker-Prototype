@@ -21,4 +21,5 @@
     <dimen name="size_onefifty">150dp</dimen>
     <dimen name="size_sixteen">16dp</dimen>
     <dimen name="margin_between_layout">3dp</dimen>
+    <dimen name="text_sixteen">16sp</dimen>
 </resources>

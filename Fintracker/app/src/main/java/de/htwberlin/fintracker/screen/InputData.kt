@@ -4,17 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.databinding.FragmentInputDataBinding
+import kotlinx.android.synthetic.main.fragment_input_data.*
 
 class InputData : Fragment() {
-    // Create binding and viewmodel variables
+    // Declaring variables
     private lateinit var binding: FragmentInputDataBinding
     private lateinit var viewModel: InputDataViewModel
+    val switch : Switch = switch_income_or_expense
+    val switchStatus = switch.isChecked()
+    val value = binding.value.text
+    val message = binding.message.text
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,11 +34,10 @@ class InputData : Fragment() {
             false
         )
 
+
         // Initialise ViewModel with ViewModelProvider and databinding
         val db = AppDatabase(requireContext())
         val dao = db.getExpenseDao()
-
-
         viewModel = ViewModelProvider(this).get(InputDataViewModel::class.java)
         binding.inputDataViewModel = viewModel
 

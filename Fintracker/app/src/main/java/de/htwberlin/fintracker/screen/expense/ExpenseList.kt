@@ -47,8 +47,6 @@ class ExpenseList : Fragment() {
         }
          */
 
-        // TODO: call methods to show expenses database
-
         binding.setLifecycleOwner(this)
         return binding.root
     }
@@ -59,5 +57,7 @@ class ExpenseList : Fragment() {
 
 
     // TODO: Database related
+
+    // TODO: call methods to show expenses database
 
 }
