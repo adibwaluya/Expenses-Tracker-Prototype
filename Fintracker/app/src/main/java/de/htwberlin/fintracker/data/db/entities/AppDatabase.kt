@@ -5,17 +5,19 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import de.htwberlin.fintracker.data.db.ExpenseDAO
+import de.htwberlin.fintracker.data.db.IncomeDAO
 import de.htwberlin.fintracker.data.db.UserDao
 import de.htwberlin.fintracker.screen.login.UserLoginFragment
 
 @Database(
-        entities = [User::class, Expense::class],
+        entities = [User::class, Expense::class, Income::class],
         version = 1
 )
 abstract class AppDatabase : RoomDatabase(){
 
     abstract fun getUserDao() : UserDao
     abstract fun getExpenseDao() : ExpenseDAO
+    abstract fun getIncomeDao() : IncomeDAO
 
     // Create AppDatabase
     companion object{

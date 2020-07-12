@@ -3,7 +3,6 @@ package de.htwberlin.fintracker.screen.registration
 import android.accounts.NetworkErrorException
 import android.view.View
 import androidx.lifecycle.ViewModel
-import de.htwberlin.fintracker.data.network.NetworkConnectionInterceptor
 import de.htwberlin.fintracker.data.repositories.UserRepository
 import de.htwberlin.fintracker.screen.auth.AuthListener
 import de.htwberlin.fintracker.util.ApiExceptions

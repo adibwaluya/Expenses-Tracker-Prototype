@@ -1,19 +1,16 @@
 package de.htwberlin.fintracker.screen.registration
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.data.db.entities.User
@@ -22,8 +19,6 @@ import de.htwberlin.fintracker.data.network.NetworkConnectionInterceptor
 import de.htwberlin.fintracker.data.repositories.UserRepository
 import de.htwberlin.fintracker.databinding.FragmentSignUpBinding
 import de.htwberlin.fintracker.screen.auth.AuthListener
-import de.htwberlin.fintracker.screen.auth.AuthViewModel
-import de.htwberlin.fintracker.screen.auth.AuthViewModelFactory
 
 /**
  * A simple [Fragment] subclass.

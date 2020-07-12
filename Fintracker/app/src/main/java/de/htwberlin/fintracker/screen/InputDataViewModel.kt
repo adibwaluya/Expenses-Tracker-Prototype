@@ -1,9 +1,6 @@
 package de.htwberlin.fintracker.screen
 
-import android.widget.Switch
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.data.db.ExpenseDAO
 import de.htwberlin.fintracker.data.db.IncomeDAO
 import de.htwberlin.fintracker.data.db.entities.Expense

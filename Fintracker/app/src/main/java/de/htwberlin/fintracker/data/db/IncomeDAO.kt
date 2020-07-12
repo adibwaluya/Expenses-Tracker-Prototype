@@ -1,11 +1,13 @@
 package de.htwberlin.fintracker.data.db
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import de.htwberlin.fintracker.data.db.entities.Income
 
+@Dao
 interface IncomeDAO {
 
     @Query("SELECT * FROM `List of Incomes` ORDER BY incId DESC")

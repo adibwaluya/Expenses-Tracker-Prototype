@@ -36,8 +36,11 @@ class InputData : Fragment() {
 
         // Initialise ViewModel with ViewModelProvider and databinding
         val db = AppDatabase(requireContext())
-        val dao = db.getExpenseDao()
-        viewModel = ViewModelProvider(this).get(InputDataViewModel::class.java)
+        val expenseDao = db.getExpenseDao()
+        val incomeDao = db.getIncomeDao()
+
+        val factory = InputDataViewModelFactory(expenseDao, incomeDao)
+        viewModel = ViewModelProvider(this, factory).get(InputDataViewModel::class.java)
         binding.inputDataViewModel = viewModel
 
         return binding.root
