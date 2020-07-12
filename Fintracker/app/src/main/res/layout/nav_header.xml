@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/size_twohundred"
-    android:background="@drawable/button_background"
+    android:background="@drawable/header_nav"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:id="@+id/navHeaderImage"
         android:layout_width="@dimen/size_twohundred"
         android:layout_height="0dp"
-        android:src="@drawable/book"
+        android:src="@drawable/expensee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

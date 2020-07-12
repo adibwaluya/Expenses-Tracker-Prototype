@@ -25,7 +25,7 @@
                     android:layout_width="@dimen/size_twohundred"
                     android:layout_height="@dimen/size_twohundred"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/book" />
+                    android:src="@drawable/expensee" />
 
                 <EditText
                     android:text="@={viewmodel.email}"
