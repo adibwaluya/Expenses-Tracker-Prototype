@@ -37,15 +37,19 @@
         android:id="@+id/incomeList"
         android:name="de.htwberlin.fintracker.screen.income.IncomeList"
         android:label="IncomeList"
-        tools:layout="@layout/fragment_income_list"/>
+        tools:layout="@layout/fragment_income_list">
+        <action
+            android:id="@+id/action_incomeList_to_inputData"
+            app:destination="@id/inputData" />
+    </fragment>
     <fragment
         android:id="@+id/expenseList"
         android:name="de.htwberlin.fintracker.screen.expense.ExpenseList"
         android:label="ExpenseList"
         tools:layout="@layout/fragment_expense_list">
         <action
-            android:id="@+id/action_expenseList_to_incomeList"
-            app:destination="@id/incomeList" />
+            android:id="@+id/action_expenseList_to_inputData"
+            app:destination="@id/inputData" />
     </fragment>
     <fragment
         android:id="@+id/userRegistrationFragment"
@@ -60,4 +64,8 @@
             android:id="@+id/action_userRegistrationFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/inputData"
+        android:name="de.htwberlin.fintracker.screen.InputData"
+        android:label="InputData" />
 </navigation>

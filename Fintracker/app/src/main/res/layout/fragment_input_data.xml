@@ -23,7 +23,7 @@
             android:fontFamily="@font/alike_angular"
             android:hint="@string/add_data"
             android:inputType="none"
-            android:textSize="@dimen/size_thirtytwo" />
+            android:textSize="32sp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -31,14 +31,17 @@
             android:gravity="center"
             android:hint="@string/input"
             android:inputType="numberDecimal"
-            android:textSize="@dimen/text_twentyone" />
+            android:textSize="@dimen/text_twentyone"
+            android:autofillHints="@string/expense" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="top"
-            android:hint="@string/message" />
+            android:hint="@string/message"
+            android:autofillHints="@string/message"
+            android:inputType="text"/>
 
         <Switch
             android:id="@+id/switchBetweenIncomeExpense"
