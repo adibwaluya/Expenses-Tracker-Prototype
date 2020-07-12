@@ -15,7 +15,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -23,7 +25,8 @@
             android:fontFamily="@font/alike_angular"
             android:hint="@string/add_data"
             android:inputType="none"
-            android:textSize="32sp"/>
+            android:textSize="32sp"
+            android:gravity="center" />
 
         <EditText
             android:layout_width="match_parent"
@@ -31,8 +34,10 @@
             android:gravity="center"
             android:hint="@string/input"
             android:inputType="numberDecimal"
-            android:textSize="@dimen/text_twentyone"
-            android:autofillHints="@string/expense" />
+            android:textSize="@dimen/text_thirtyfive"
+            android:autofillHints="@string/expense"
+            android:layout_marginTop="@dimen/margin_between_layout"
+            android:layout_marginBottom="@dimen/margin_between_layout" />
 
         <EditText
             android:layout_width="match_parent"
@@ -41,17 +46,42 @@
             android:gravity="top"
             android:hint="@string/message"
             android:autofillHints="@string/message"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:layout_marginTop="@dimen/margin_between_layout"
+            android:layout_marginBottom="@dimen/margin_between_layout" />
+
 
         <Switch
             android:id="@+id/switchBetweenIncomeExpense"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textOff="@string/expense"
+            android:textOn="@string/income"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/size_thirtytwo"
+            android:layout_marginTop="@dimen/size_thirtytwo"
+            android:showText="true"/>
+
+
+
+        <Button
+            android:id="@+id/input_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textOff="@string/expense"
-            android:textOn="@string/income" />
+            android:layout_marginStart="@dimen/size_twenty"
+            android:layout_marginTop="@dimen/size_twenty"
+            android:layout_marginEnd="@dimen/size_twenty"
+            android:background="@drawable/button_background"
+            android:text="@string/confirm" />
 
         <!--
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton" />
+
+
         <TextView
             android:id="@+id/inputDataText"
             android:layout_width="match_parent"

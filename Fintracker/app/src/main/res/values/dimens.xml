@@ -7,6 +7,7 @@
     <dimen name="size_eight">8dp</dimen>
     <dimen name="radius">30dp</dimen>
     <dimen name="text_twentyone">21sp</dimen>
+    <dimen name="text_thirtyfive">35sp</dimen>
     <dimen name="size_twofifity">250dp</dimen>
     <dimen name="size_sixtyfour">64dp</dimen>
     <dimen name="size_threehundred">300dp</dimen>
@@ -19,4 +20,5 @@
     <dimen name="size_twoten">210dp</dimen>
     <dimen name="size_onefifty">150dp</dimen>
     <dimen name="size_sixteen">16dp</dimen>
+    <dimen name="margin_between_layout">3dp</dimen>
 </resources>
