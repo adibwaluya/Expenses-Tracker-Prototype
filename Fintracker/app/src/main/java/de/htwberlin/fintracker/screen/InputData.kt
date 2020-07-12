@@ -8,7 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import de.htwberlin.fintracker.R
+import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.databinding.FragmentInputDataBinding
+import de.htwberlin.fintracker.screen.expense.ExpenseListViewModel
+import de.htwberlin.fintracker.screen.expense.ExpenseListViewModelFactory
 
 class InputData : Fragment() {
     // Create binding and viewmodel variables
@@ -28,9 +31,16 @@ class InputData : Fragment() {
             false
         )
 
+        // Initialise ViewModel with ViewModelProvider and databinding
+        val db = AppDatabase(requireContext())
+        val dao = db.getExpenseDao()
 
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        viewModel = ViewModelProvider(this).get(InputDataViewModel::class.java)
+        binding.inputDataViewModel = viewModel
+
+
+        return binding.root
     }
 
 }
