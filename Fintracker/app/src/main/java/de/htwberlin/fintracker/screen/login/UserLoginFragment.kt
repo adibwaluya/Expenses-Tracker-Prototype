@@ -1,17 +1,12 @@
 package de.htwberlin.fintracker.screen.login
 
-import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.ViewUtils
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LiveData
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -25,7 +20,6 @@ import de.htwberlin.fintracker.databinding.FragmentLoginBinding
 import de.htwberlin.fintracker.screen.auth.AuthListener
 import de.htwberlin.fintracker.screen.auth.AuthViewModel
 import de.htwberlin.fintracker.screen.auth.AuthViewModelFactory
-import de.htwberlin.fintracker.util.toast
 
 /**
  * A simple [Fragment] subclass.
@@ -52,7 +46,6 @@ class UserLoginFragment : Fragment(), AuthListener {
             view.findNavController().navigate(R.id.action_userLoginFragment_to_userRegistrationFragment)
         }
 
-        // TODO: BAD PRACTICE! Replace with dependency injection
         val networkConnectionInterceptor = NetworkConnectionInterceptor(context!!.applicationContext)
         val api = MyApi(networkConnectionInterceptor)
         val db = AppDatabase(requireContext())

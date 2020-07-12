@@ -34,7 +34,6 @@ class AuthViewModel (
 
             try{
 
-                // TODO: This will be fixed using dependency injection
                 val authResponse = repository.userLogin(email!!, password!!)
 
                 authResponse.user?.let {

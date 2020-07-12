@@ -7,7 +7,6 @@ import androidx.navigation.ui.NavigationUI
 import de.htwberlin.fintracker.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.fragment_main_page.*
 
-// import de.htwberlin.fintracker.screen.expense.ExpenseListAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,11 +18,6 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 
-                // Add RecyclerView
-        /* val recyclerView = findViewById<RecyclerView>(R.id.recyclerview_expenses)
-        val adapter = ExpenseListAdapter(this)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this) */
     }
 
     override fun onSupportNavigateUp(): Boolean {
