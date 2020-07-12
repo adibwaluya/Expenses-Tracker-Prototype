@@ -70,7 +70,7 @@
         android:label="InputData"
         tools:layout="@layout/fragment_input_data"/>
     <fragment
-        android:id="@+id/about"
+        android:id="@+id/aboutFragment"
         android:name="de.htwberlin.fintracker.screen.about.About"
         android:label="About Expensee"
         tools:layout="@layout/fragment_about"/>

@@ -1,12 +1,11 @@
 package de.htwberlin.fintracker
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import de.htwberlin.fintracker.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.fragment_main_page.*
 
 // import de.htwberlin.fintracker.screen.expense.ExpenseListAdapter
 
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val navController = this.findNavController(R.id.myNavHostFragment)
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 
                 // Add RecyclerView
         /* val recyclerView = findViewById<RecyclerView>(R.id.recyclerview_expenses)
@@ -29,6 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
-        return navController.navigateUp()
+        return NavigationUI.navigateUp(navController, drawerLayout)
     }
 }
