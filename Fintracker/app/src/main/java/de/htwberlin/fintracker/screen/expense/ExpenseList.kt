@@ -35,27 +35,11 @@ class ExpenseList : Fragment() {
         val dao = db.getExpenseDao()
         val factory = ExpenseListViewModelFactory(dao)
 
-
         viewModel = ViewModelProvider(this, factory).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
-
-        /*
-        binding.fabExpense.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_expenseList_to_incomeList)  // to test
-        }
-         */
-
         binding.setLifecycleOwner(this)
+
         return binding.root
     }
-
-    // Methods
-
-    // TODO: Methods for button pressed
-
-
-    // TODO: Database related
-
-    // TODO: call methods to show expenses database
 
 }
