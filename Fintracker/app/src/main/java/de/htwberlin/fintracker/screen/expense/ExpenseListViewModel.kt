@@ -35,27 +35,6 @@ class ExpenseListViewModel(
         }
     }
 
-    // TODO: Complete the function
-    /*
-    private fun initialiseListExpenses() {
-        uiScope.launch {
-            expenses.value = getExpensesFromDatabase()
-        }
-    }
-
-     */
-
-    // TODO: configure and complete the function
-    /*
-    private suspend fun getExpensesFromDatabase(): List<Expense>? {
-        return withContext(Dispatchers.IO) {
-            var expenses = dao.getAllExpenses()
-            expenses
-        }
-    }
-
-     */
-
     // New click handler for the FAB - will be called with lambda function from XML code
     fun onAddExpense() {
         uiScope.launch {

@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import de.htwberlin.fintracker.R
-import de.htwberlin.fintracker.data.db.ExpenseDAO
 import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
 
@@ -37,27 +35,11 @@ class ExpenseList : Fragment() {
         val dao = db.getExpenseDao()
         val factory = ExpenseListViewModelFactory(dao)
 
-
         viewModel = ViewModelProvider(this, factory).get(ExpenseListViewModel::class.java)
         binding.expenseListViewModel = viewModel
-
-        /*
-        binding.fabExpense.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_expenseList_to_incomeList)  // to test
-        }
-         */
-
         binding.setLifecycleOwner(this)
+
         return binding.root
     }
-
-    // Methods
-
-    // TODO: Methods for button pressed
-
-
-    // TODO: Database related
-
-    // TODO: call methods to show expenses database
 
 }
