@@ -15,57 +15,56 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="16dp"
+        android:paddingTop="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp">
+        android:paddingBottom="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike_angular"
+            android:gravity="center"
             android:hint="@string/add_data"
             android:inputType="none"
-            android:textSize="32sp"
-            android:gravity="center" />
+            android:textSize="32sp" />
 
         <EditText
             android:id="@+id/value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_layout"
+            android:layout_marginBottom="@dimen/margin_between_layout"
+            android:autofillHints="@string/expense"
             android:gravity="center"
             android:hint="@string/input"
             android:inputType="numberDecimal"
-            android:textSize="@dimen/text_thirtyfive"
-            android:autofillHints="@string/expense"
-            android:layout_marginTop="@dimen/margin_between_layout"
-            android:layout_marginBottom="@dimen/margin_between_layout" />
+            android:textSize="@dimen/text_thirtyfive" />
 
         <EditText
             android:id="@+id/message"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_between_layout"
+            android:layout_marginBottom="@dimen/margin_between_layout"
             android:layout_weight="1"
+            android:autofillHints="@string/message"
             android:gravity="top"
             android:hint="@string/message"
-            android:autofillHints="@string/message"
-            android:inputType="text"
-            android:layout_marginTop="@dimen/margin_between_layout"
-            android:layout_marginBottom="@dimen/margin_between_layout" />
+            android:inputType="text" />
 
 
         <Switch
             android:id="@+id/switch_income_or_expense"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/size_thirtytwo"
+            android:layout_marginBottom="@dimen/size_thirtytwo"
+            android:showText="true"
             android:text="@string/input_type"
             android:textOff="@string/expense"
             android:textOn="@string/income"
-            android:textSize="@dimen/text_sixteen"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/size_thirtytwo"
-            android:layout_marginTop="@dimen/size_thirtytwo"
-            android:showText="true"/>
-
+            android:textSize="@dimen/text_sixteen" />
 
 
         <Button
@@ -76,8 +75,8 @@
             android:layout_marginTop="@dimen/size_twenty"
             android:layout_marginEnd="@dimen/size_twenty"
             android:background="@drawable/button_background"
-            android:text="@string/confirm"
-            android:onClick="@{() -> InputDataViewModel.onInputData()}" />
+            android:onClick="@{() -> InputDataViewModel.onInputData()}"
+            android:text="@string/confirm" />
 
 
     </LinearLayout>
