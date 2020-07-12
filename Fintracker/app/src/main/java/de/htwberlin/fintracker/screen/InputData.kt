@@ -10,8 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.databinding.FragmentInputDataBinding
-import de.htwberlin.fintracker.screen.expense.ExpenseListViewModel
-import de.htwberlin.fintracker.screen.expense.ExpenseListViewModelFactory
 
 class InputData : Fragment() {
     // Create binding and viewmodel variables
@@ -19,10 +17,8 @@ class InputData : Fragment() {
     private lateinit var viewModel: InputDataViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(
             inflater,

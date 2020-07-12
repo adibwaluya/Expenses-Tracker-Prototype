@@ -12,7 +12,6 @@ import de.htwberlin.fintracker.R
 import de.htwberlin.fintracker.data.db.ExpenseDAO
 import de.htwberlin.fintracker.data.db.entities.AppDatabase
 import de.htwberlin.fintracker.databinding.FragmentExpenseListBinding
-import kotlinx.coroutines.InternalCoroutinesApi
 
 /**
  * A simple [Fragment] subclass.
@@ -20,10 +19,8 @@ import kotlinx.coroutines.InternalCoroutinesApi
 class ExpenseList : Fragment() {
     // Create binding and viewmodel variables
     private lateinit var binding: FragmentExpenseListBinding
-    //@InternalCoroutinesApi
     private lateinit var viewModel: ExpenseListViewModel
 
-    // @InternalCoroutinesApi
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {

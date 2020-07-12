@@ -67,5 +67,6 @@
     <fragment
         android:id="@+id/inputData"
         android:name="de.htwberlin.fintracker.screen.InputData"
-        android:label="InputData" />
+        android:label="InputData"
+        tools:layout="@layout/fragment_input_data"/>
 </navigation>
