@@ -15,9 +15,11 @@ import de.htwberlin.fintracker.databinding.FragmentMainPageBinding
  * A simple [Fragment] subclass.
  */
 class MainPageFragment : Fragment() {
-
+    // Declaring lateinit variables
     private lateinit var binding: FragmentMainPageBinding
     private lateinit var drawerLayout: DrawerLayout
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,10 +58,10 @@ class MainPageFragment : Fragment() {
         inflater?.inflate(R.menu.options_menu, menu)
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item!!,
             view!!.findNavController())
                 || super.onOptionsItemSelected(item)
     }
-
 }

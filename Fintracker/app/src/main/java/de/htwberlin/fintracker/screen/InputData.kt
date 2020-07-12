@@ -18,7 +18,7 @@ class InputData : Fragment() {
     private lateinit var binding: FragmentInputDataBinding
     private lateinit var viewModel: InputDataViewModel
     val switch : Switch = switch_income_or_expense
-    val switchStatus = switch.isChecked()
+    val switchStatus : Boolean = switch.isChecked()
     val value = binding.value.text
     val message = binding.message.text
 
@@ -34,13 +34,11 @@ class InputData : Fragment() {
             false
         )
 
-
         // Initialise ViewModel with ViewModelProvider and databinding
-        val db = AppDatabase(requireContext())
-        val dao = db.getExpenseDao()
+        //val db = AppDatabase(requireContext())
+        //val dao = db.getExpenseDao()
         viewModel = ViewModelProvider(this).get(InputDataViewModel::class.java)
         binding.inputDataViewModel = viewModel
-
 
         return binding.root
     }
