@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_twohundred"
+            android:layout_height="@dimen/size_twohundred"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/book"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/about_app"
+            android:layout_marginTop="@dimen/size_sixteen"
+            android:textSize="@dimen/size_thirtytwo"
+            android:fontFamily="@font/alike_angular"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_forty"
+            android:layout_marginTop="@dimen/size_sixteen"
+            android:layout_marginEnd="@dimen/size_forty"
+            android:fontFamily="serif"
+            android:text="@string/about_exptwo"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/text_twentyone" />
+
+
+    </LinearLayout>
+</layout>
